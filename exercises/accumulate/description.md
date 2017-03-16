@@ -2,7 +2,7 @@
 
 - 1, 2, 3, 4, 5
 
-And the operation:
+그리고 다음과 같은 연산이 있다. :
 
 - square a number (`x => x * x`)
 
