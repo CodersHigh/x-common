@@ -1,4 +1,4 @@
-Given the collection of numbers:
+다음과 같이 숫자의 집합이 있다.:
 
 - 1, 2, 3, 4, 5
 
