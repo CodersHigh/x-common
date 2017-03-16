@@ -1,23 +1,20 @@
-The tricky thing here is that a leap year in the Gregorian calendar occurs:
+여기에서 우리가 풀어야 하는 문제는, 그레고리안력에서 발생하는 윤년이다 :
 
 ```plain
-on every year that is evenly divisible by 4
-  except every year that is evenly divisible by 100
-    unless the year is also evenly divisible by 400
+서력 기원 연수가 4로 나누어떨어지는 해는 윤년으로 한다.
+이 중에서 100으로 나누어떨어지는 해는 평년으로 한다.
+그중에 400으로 나누어떨어지는 해는 윤년으로 둔다.
 ```
 
-For example, 1997 is not a leap year, but 1996 is.  1900 is not a leap
-year, but 2000 is.
+예를 들어, 1997년은 윤년이 아니지만, 1996년은 윤년이다.
+1900년은 윤년이 아니지만 2000년은 윤년이다.
 
-If your language provides a method in the standard library that does
-this look-up, pretend it doesn't exist and implement it yourself.
+문제 풀이를 하는 언어가 이것을 찾아주는 표준 라이브러리 메소드를 제공한다면, 그것을 무시하고 직접 구현해 보라.
 
-## Notes
+## 노트
 
-Though our exercise adopts some very simple rules, there is more to
-learn!
+우리의 연습이 아주 간단한 원칙을 가지고 있지만, 이 문제에서 배울 수 있는 부분이 많다!
 
-For a delightful, four minute explanation of the whole leap year
-phenomenon, go watch [this youtube video][video].
+재미삼아, 윤년 현상에 대해 전체적으로 설명한 4분짜리 비디오를 보기 바란다.[유튜브 비디오][video].
 
 [video]: http://www.youtube.com/watch?v=xX96xng7sAE

@@ -1,8 +1,7 @@
-Bob answers 'Sure.' if you ask him a question.
+밥에게 질문하면 '물론이지.'라고 대답한다.
 
-He answers 'Whoa, chill out!' if you yell at him.
+그에게 소리지르면 '어이~ 진정해!'라고 대답한다.
 
-He says 'Fine. Be that way!' if you address him without actually saying
-anything.
+말은 하지 않고 부르기만 하면 '괜찮아. 계속해 봐!'라고 말할 것입니다.
 
-He answers 'Whatever.' to anything else.
+다른 모든 것에 대해서는 "아무거나" 라고 대답합니다.
