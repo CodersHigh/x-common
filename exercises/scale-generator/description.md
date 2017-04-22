@@ -1,52 +1,40 @@
-Given a tonic, or starting note, and a set of intervals, generate
-the musical scale starting with the tonic and following the
-specified interval pattern.
+으뜸음, 시작음, interval을 사용해서, 으뜸음으로 시작하는 지정된 음정 규칙을 따르는 음계를 만드세요.
 
-Scales in Western music are based on the chromatic (12-note) scale.This
-scale can be expressed as the following group of pitches:
+서양 음악에서 음계는 12음의 크로마틱 스케일을 기반으로 합니다. 크로마틱 스케일은 다음과 같은 음들로 표현됩니다:
 
 A, A#, B, C, C#, D, D#, E, F, F#, G, G#
 
-A given sharp note (indicated by a #), can also be expressed as the flat
-of the note above it (indicated by a b), so the chromatic scale can also be
-written like this:
+샵(#)음은 바로 위 음의 플랫(b)으로도 표현할 수 있습니다. 그러므로 크로마틱 스케일은 다음과 같이도 표현될 수 있습니다:
 
 A, Bb, B, C, Db, D, Eb, E, F, Gb, G, Ab
 
-The major and minor scale and modes are subsets of this twelve-pitch
-collection. They have seven pitches, and are called diatonic scales.
-The collection of notes in these scales is written with either sharps or
-flats, depending on the tonic. Here is a list of which are which:
+장조와 단조의 스케일과 모드는 이러한 열두 음의 음의 조합으로 이루어집니다. 이 중에는 다이아토닉 스케일이라고 불리는 일곱 음이 있습니다. 이 스케일의 음들은 으뜸음에 기반해서 샵이나 플랫을 사용하고 있습니다. 다음 예시를 보도록 하겠습니다:
 
-No Accidentals:
+- 임시표 없음:
+
 C major
+
 A minor
 
-Use Sharps:
+- 샵 사용:
+
 G, D, A, E, B, F# major
+
 e, b, f#, c#, g#, d# minor
 
-Use Flats:
+- 플랫 사용:
+
 F, Bb, Eb, Ab, Db, Gb major
+
 d, g, c, f, bb, eb minor
 
+다이아토닉 스케일과 크로마틱 스케일에서 도출한 다른 스케일들은 interval을 기반으로 만들어집니다. Interval은 두 음 사이의 거리를 의미합니다.
 
-The diatonic scales, and all other scales that derive from the
-chromatic scale, are built upon intervals. An interval is the space
-between two pitches.
+가장 간단한 interval은 "반음", 혹은 "단이도"라고 부르는 인접한 두 음 사이입니다.(소문자 "m"으로 표기) "온음" 혹은 "장이도"는 한 음이 사이에 있는 두 음 사이를 의미합니다.(대문자 "M"으로 표기) 다이아토닉 스케일은 음 사이에 이 두 종류의 interval만 사용해서 만들어집니다.
 
-The simplest interval is between two adjacent notes, and is called a
-"half step", or "minor second" (sometimes written as a lower-case "m").
-The interval between two notes that have an interceding note is called
-a "whole step" or "major second" (written as an upper-case "M"). The
-diatonic scales are built using only these two intervals between
-adjacent notes.
+다이아토닉이 아닌 스케일은 같은 문자를 두번 쓰고 다른 종류의 interval을 가질 수 있습니다. 때때로 이 스케일은 일반보다 작을 수도(Diminished, "D"로 표기), 클 수도(Augmented, "A"로 표기) 있습니다. 증이도보다 큰 interval들은 다른 이름을 가집니다.
 
-Non-diatonic scales can contain the same letter twice, and can contain other intervals.
-Sometimes they may be smaller than usual (diminished, written "D"), or larger
-(augmented, written "A").  Intervals larger than an augmented second have other names.
-
-Here is a table of pitches with the names of their interval distance from the tonic (A).
+아래는 음과 으뜸음 (A)과의 interval의 이름을 표기한 표입니다.
 
     A    |    A#   |    B    |    C    |    C#   |    D    |    D#   |
 ----------------------------------------------------------------------
