@@ -1,23 +1,45 @@
-다음과 같이 숫자의 집합이 있습니다.:
+# Accumulate
 
-- 1, 2, 3, 4, 5
+'Accumulate' 기능을 구현한다. collection 데이터들이 주어지고, 그 각 데이터들에 대해 수행될 operation 이 주어진다. 그러면 그 operation 이 적용된 collection 값들의 새로운 collection 을 반환한다.
 
-그리고 다음과 같은 연산이 있습니다. :
+예를 들어 아래와 같은 숫자들이 input collection 으로 주어졌다고 하자.
 
-- square a number (`x => x * x`)
+```
+[1, 2, 3, 4, 5]
+```
 
-여러분의 코드는 아래와 같이 제곱의 집합을 만들 수 있어야 합니다.
+그리고 아래와 같이 operation 이 주어졌다.
 
-- 1, 4, 9, 16, 25
+```
+func square(number:Int) -> Int {
+    return number * number
+}
+```
 
-예상되는 함수 특징을 파악하기 위해 테스트 모음을 확인해 보세요.
+그러면 아래와 같은 collection 을 반환하여야 한다.
 
-## 제한
+```
+[1, 4, 9, 16, 25]
+```
 
-기본 라이브러리로 제공되는 collect/map/fmap/whatchamacallit 를 사용하지 마세요.
-대신에 다른 기초 도구를 이용하여 여러분의 해결책으로 풀어보세요.
+collection 은 배열로서 주어진다.
 
-Lisp 한정: 이것은 idiomatic Lisp 과 비슷하기 때문에, 라이브러리 함수 대신 
-`MAPCAR` 이나 유사한 함수를 사용하기에 적절합니다.
-it's perfectly fine to use or the equivalent,
-as this is idiomatic Lisp, not a library function.
+## Structure
+
+Array 의 extention 을 만들어 아래 함수를 구현한다.
+
+```
+func accumulate(_ operation:(Any) -> Any) -> [Any]
+```
+
+배열의 각 요소에 대해 operation 함수를 적용한 새로운 배열을 반환한다.
+
+## Source
+
+```
+extension Array {
+    func accumulate(_ operation:(Any) -> Any) -> [Any] {
+        /* write your code here */
+    }
+}
+```
