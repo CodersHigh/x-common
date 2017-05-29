@@ -1,32 +1,43 @@
 import Foundation
 
-class Clock: CustomStringConvertible, Comparable {
-    let time: Int
+// operator overloading
+func == (left: Clock, right: Clock) -> Bool{
+    return left.description == right.description
+}
+
+class Clock: CustomStringConvertible, Equatable {
     
-    init(hours: Int = 0, minutes: Int = 0) {
-        let mins: Int = (60 * hours + minutes) % (24 * 60)
-        time = mins > 0 ? mins : mins + (24 * 60)
-    }
+    var hour, minute: Int
+    var description: String
     
-    var description: String {
-        get {
-            return String(format: "%02d:%02d", arguments: [time / 60, time % 60])
+    init (hours: Int = 0, minutes: Int = 0) {
+        var minute = minutes % 60
+        let additionalHours = minutes / 60
+        var hour = (hours + additionalHours) % 24
+        
+        while minute < 0 {
+            minute += 60
+            hour -= 1
         }
-    }
-
-    func add(hours: Int = 0, minutes: Int = 0) -> Clock {
-        return Clock(hours: hours, minutes: time + minutes)
+        
+        while hour < 0 {
+            hour += 24
+        }
+        
+        self.hour = hour
+        self.minute = minute
+        
+        let hrStr = (hour < 10) ? "0\(hour)" : String(hour)
+        let mintStr = (minute < 10) ? "0\(minute)" : String(minute)
+        
+        description = "\(hrStr):\(mintStr)"
     }
     
-    func subtract(hours: Int = 0, minutes: Int = 0) -> Clock {
-        return Clock(hours: hours, minutes: time - minutes)
+    func add (minutes: Int) -> Clock {
+        return Clock(hours: hour, minutes: minute + minutes)
     }
-}
-
-func ==(lhs: Clock, rhs: Clock) -> Bool {
-    return lhs.time == rhs.time
-}
-
-func <(lhs: Clock, rhs: Clock) -> Bool {
-    return lhs.time < rhs.time
+    
+    func subtract (minutes: Int) -> Clock {
+        return Clock(hours: hour, minutes: minute - minutes)
+    }
 }

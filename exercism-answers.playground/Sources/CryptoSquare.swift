@@ -1,64 +1,92 @@
 import Foundation
 
 class Crypto {
-    let text: String
-    let allowedChars = NSMutableCharacterSet()
-
-    init(_ text: String) {
+    var text: String
+    
+    init(_ text: String){
         self.text = text
-        allowedChars.formUnionWithCharacterSet(NSCharacterSet.letterCharacterSet())
-        allowedChars.formUnionWithCharacterSet(NSCharacterSet.decimalDigitCharacterSet())
     }
     
+    // MARK: normalizePlaintext
     var normalizePlaintext: String {
-        get {
-            return String(text.lowercaseString.utf16
-                .filter{allowedChars.characterIsMember($0)}
-                .map{Character(UnicodeScalar($0))})
+        let characters = text.lowercased().characters
+            .map {String($0)}
+            .filter {
+                if let char = $0.unicodeScalars.first {
+                    return CharacterSet.alphanumerics.contains(char)
+                }
+                return false
         }
+        print("\(characters.joined(separator: ""))")
+        return characters.joined(separator: "")
     }
     
+    // MARK: size
     var size: Int {
-        get {
-            return Int(ceil(sqrt(Double(normalizePlaintext.characters.count))))
+        var x = 0
+        while (x*x < normalizePlaintext.characters.count){
+            x+=1
         }
+        return x
     }
     
+    // MARK: plaintextSegments
     var plaintextSegments: [String] {
-        get {
-            let length = normalizePlaintext.characters.count
-            let start = normalizePlaintext.startIndex
-            return 0
-                .stride(to: length, by: size)
-                .map{normalizePlaintext[
-                    start.advancedBy($0)..<start.advancedBy($0 + size,
-                    limit: normalizePlaintext.endIndex)]}
+        let myString = normalizePlaintext
+        var segments = [String]()
+        
+        let last = myString.characters.count % size
+        
+        var startIndex = (last != 0 ? myString.index(myString.endIndex, offsetBy: -last) : myString.index(myString.endIndex, offsetBy: -size))
+        var endIndex = myString.endIndex
+
+        var section = myString.substring(from: startIndex)
+        
+        segments.append(section)
+        
+        while (startIndex > myString.startIndex){
+            
+            startIndex = myString.index(startIndex, offsetBy: -size)
+            endIndex = myString.index(startIndex, offsetBy: size)
+            section = myString.substring(with: startIndex..<endIndex)
+            
+            segments.append(section)
         }
+        print(segments)
+        return segments.reversed()
     }
     
+    
+    // MARK: ciphertext
     var ciphertext: String {
-        get {
-            var cipherText: String = ""
-            for col in 0..<size {
-                for row in 0..<plaintextSegments.count {
-                    let word = plaintextSegments[row]
-                    if col < word.characters.count {
-                        cipherText += String(word[word.startIndex.advancedBy(col)])
-                    }
+        var cipher = ""
+        var index = 0
+        while (index < size){
+            for segment in plaintextSegments {
+                var itemAtIndex: Character?
+                if (index < segment.characters.count) {
+                    itemAtIndex = segment[segment.index(segment.startIndex, offsetBy: index)]
+                    
+                    cipher.append(itemAtIndex!)
                 }
             }
-            return cipherText
+            index += 1
         }
+        return cipher
     }
     
+    // MARK: normalizeCiphertext
     var normalizeCiphertext: String {
-        get {
-            var text = ""
-            let start = ciphertext.startIndex
-            for i in 0.stride(to: ciphertext.characters.count, by: size - 1) {
-                text += ciphertext[start.advancedBy(i)..<start.advancedBy(i + size - 1, limit: ciphertext.endIndex)] + " "
+        var ct = ciphertext
+        var normalizeCT = ""
+        while (ct.characters.count > 0){
+            if (normalizeCT.characters.count % size != 0){
+                normalizeCT.append(ct.remove(at: ct.startIndex))
+            } else {
+                normalizeCT.append(" " as Character)
             }
-            return text[text.startIndex..<text.endIndex.predecessor()]
         }
+        
+        return normalizeCT.trimmingCharacters(in: CharacterSet.whitespaces)
     }
 }

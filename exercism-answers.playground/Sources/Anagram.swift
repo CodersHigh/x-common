@@ -7,16 +7,16 @@ class Anagram {
         self.word = word
     }
     
-    func match(words: [String]) -> [String] {
-        let letters = self.word.lowercaseString.characters.sort()
-        var anagrams = [String]()
-        for w in words {
-            let sameLetters = w.lowercaseString.characters.sort() == letters
-            let sameWord = w.lowercaseString == word.lowercaseString
-            if sameLetters && !sameWord {
-                anagrams.append(w)
+    func match(_ list: [String]) -> [String] {
+        var result = [String]()
+        let input = self.word.lowercased().characters.sorted().map{String($0)}.reduce("", +)
+        for str in list {
+            let strTmp = str.lowercased().characters.sorted().map{String($0)}.reduce("", +)
+            if strTmp == input &&
+                str.lowercased() != self.word.lowercased() {
+                result.append(str)
             }
         }
-        return anagrams
+        return result
     }
 }

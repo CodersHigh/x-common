@@ -1,13 +1,15 @@
-import Foundation
 
-final class ETL {
-    class func transform(old:[Int:[String]]) -> [String: Int] {
-        var new = [String: Int]()
-        for (key, values) in old {
-            for v in values {
-                new[v.lowercaseString] = key
+
+class ETL {
+    class func transform(_ original: [Int:[String]]) -> [String:Int] {
+        var converted = [String:Int]()
+        
+        for (key, value) in original {
+            for i in 0..<value.count {
+                converted[value[i].lowercased()] = key
             }
         }
-        return new
+        
+        return converted
     }
 }

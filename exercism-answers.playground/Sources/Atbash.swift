@@ -1,42 +1,33 @@
 import Foundation
 
 class Atbash {
-    static func encode(clearText: String) -> String {
-        return clearText
-            .lowercaseString
-            .characters
-            .map{ invert($0) }
-            .filter{ $0 != nil }
-            .map{ $0! }
-            .groupBy(5)
-            .map{String($0)}
-            .joinWithSeparator(" ")
-    }
+    class func encode(text: String) -> String {
+        let alphaArray = Array("abcdefghijklmnopqrstuvwxyz".characters)
+        let numArray = Array("0123456789".characters)
         
-    private static func invert(c: Character) -> Character? {
-        let lower = NSCharacterSet.lowercaseLetterCharacterSet()
-        let digits = NSCharacterSet.decimalDigitCharacterSet()
-        let charUtf16 = String(c).utf16.first!
+        var codedArray: [Character] = []
         
-        switch true {
-        case lower.characterIsMember(charUtf16):
-            return Character(UnicodeScalar(219 - charUtf16))
-        case digits.characterIsMember(charUtf16):
-            return c
-        default:
-            return nil
+        for char in text.lowercased().characters {
+            
+            if alphaArray.contains(char) {
+                codedArray.append(alphaArray[25 - alphaArray.index(of: char)!])
+            } else if numArray.contains(char) {
+                codedArray.append(char)
+            }
         }
-    }
-}
-
-extension Array {
-    func groupBy(n: Int) -> [[Element]] {
-        var new = [[Element]]()
         
-        for var i = self.startIndex; i < self.endIndex; i = i.advancedBy(n) {
-            let end = i.advancedBy(n, limit: self.endIndex)
-            new.append(Array(self[i..<end]))
+        var codedSpacedArray: [Character] = []
+        
+        for (i, e) in codedArray.enumerated() {
+            
+            codedSpacedArray.append(e)
+            
+            if (i + 1) % 5 == 0 && (i + 1) < codedArray.count {
+                
+                codedSpacedArray.append(" ")
+            }
         }
-        return new
+        
+        return String(codedSpacedArray)
     }
 }

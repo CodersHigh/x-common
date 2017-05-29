@@ -1,66 +1,40 @@
-
-/*Domines simulates a dominoes game*/
 class Dominoes {
-    let dominoes: [Dominoe]
     
-    init(_ chain: [(Int, Int)]) {
-        dominoes = chain.map{Dominoe($0.0, $0.1)}
+    var sortedDominoes = [(Int, Int)]()
+    var chained: Bool = false
+    
+    init(_ dominoes: [(Int, Int)]) {
+        for domino in dominoes {
+            let orderDomino = (domino.0<=domino.1 ? domino : (domino.1, domino.0))
+            sortedDominoes.append(orderDomino)
+            sortedDominoes.sort(by: <)
+            chained = ischained()
+        }
     }
     
-    /*Chain is a chain of tiles*/
-    typealias Chain = [(Int, Int)]
-    
-    /*DominueState is the iterative state used to search for possible chains*/
-    typealias DominoeState = (chain: Chain, pool:[Dominoe], tail:Int)
-
-    /*chained checks if there is a matched sequence of dominoes that usese all the avaiable tiles
-     Uses an iteraive search of all possible chains*/
-    var chained: Bool {
-        var queue = dominoes.enumerate().map{
-            (i, dominoe) -> DominoeState in (
-                chain: [(dominoe.left, dominoe.right)],
-                pool: Array(
-                    dominoes.prefix(i) +
-                    dominoes.suffixFrom(i + 1)),
-                tail: dominoe.right)
+    func ischained() -> Bool {
+        guard sortedDominoes.count > 0 else {
+            return false
         }
         
-        while !queue.isEmpty {
-            let (chain, pool, tail) = queue.popLast()!
-            if pool.isEmpty && !chain.isEmpty &&
-                chain.first!.0 == chain.last!.1 {
-                return true
+        var set = Set<Int>()
+        var dict = Dictionary<Int,Int>()
+        set.insert(sortedDominoes.first!.0)
+        for domino in sortedDominoes {
+            guard set.contains(domino.0) else {
+                return false
             }
-            
-            for i in (0..<pool.count) {
-                if let match = pool[i].hasNum(tail) {
-                    let newPool = pool.prefix(i) + pool.suffixFrom(i + 1)
-                    let newChain = chain + [match]
-                    let newTail = match.1
-                    queue.append((newChain, Array(newPool), newTail))
-                }
+            set.insert(domino.1)
+            var newCount = (dict[domino.0]==nil ? 1 : dict[domino.0]!+1)
+            dict.updateValue(newCount, forKey: domino.0)
+            newCount = (dict[domino.1]==nil ? 1 : dict[domino.1]!+1)
+            dict.updateValue(newCount, forKey: domino.1)
+        }
+        for count in dict {
+            guard count.value%2 == 0 else {
+                return false
             }
-            
         }
-        return false
-    }
-}
-
-/*Dominue represents a single tile*/
-class Dominoe {
-    let left, right: Int
-    
-    init(_ left: Int, _ right: Int) {
-        self.left = left
-        self.right = right
-    }
-    
-    /*hasNum returns a tile with the matching side on the left if it exists*/
-    func hasNum(num: Int) -> (Int, Int)? {
-        switch num {
-        case left: return (left, right)
-        case right: return (right, left)
-        default: return nil
-        }
+        return true
     }
 }

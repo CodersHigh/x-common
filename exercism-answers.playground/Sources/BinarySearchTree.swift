@@ -1,38 +1,33 @@
-/*BinarySearchTree is a node in a binary search tree*/
-class BinarySearchTree<T:Comparable> {
-    var data: T
-    var left: BinarySearchTree<T>? = nil, right: BinarySearchTree<T>? = nil
+class BinarySearchTree {
     
-    /*init creates a new node*/
-    init(_ data: T) {
+    var left: BinarySearchTree!
+    var right: BinarySearchTree!
+    var data: Int
+    
+    init(_ data: Int) {
         self.data = data
-        
     }
     
-    /*insert adds a new value to the binary tree*/
-    func insert(d: T) {
-        let (set, node) = data < d ? (setRight, right): (setLeft, left)
-        if let bst = node {
-            bst.insert(d)
-        } else {
-            set(BinarySearchTree(d))
+    func insert(_ value: Int) {
+        if value <= data {
+            if left == nil {
+                left = BinarySearchTree(value)
+            } else {
+                left?.insert(value)
+            }
+        } else if value > data {
+            if right == nil {
+                right = BinarySearchTree(value)
+            } else {
+                right?.insert(value)
+            }
         }
     }
     
-    /*allData shows all the data in the tree*/
-    func allData() -> [T] {
-        let leftData = left == nil ? [] : left!.allData()
-        let rightData = right == nil ? [] : right!.allData()
+    func allData() -> [Int] {
+        let leftData = left?.allData() ?? []
+        let rightData = right?.allData() ?? []
+        
         return leftData + [data] + rightData
-    }
-    
-    /*setLeft sets the left node of the tree*/
-    private func setLeft(bst: BinarySearchTree<T>) {
-        left = bst
-    }
-    
-    /*setRight sets the right node of the tree*/
-    private func setRight(bst: BinarySearchTree<T>) {
-        right = bst
     }
 }
