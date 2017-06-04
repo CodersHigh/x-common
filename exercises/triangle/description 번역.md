@@ -6,20 +6,7 @@
 z ≤ x + y
 x, y, z는 삼각형의 각 변 길이에 해당합니다. 즉, 다른 두 변 길이의 합이 항상 나머지 변의 길이보다 같거나 커야 한다는 의미입니다.
 
-삼각 부등식 이론의 귀결은, degenerate, non-degenerate 두 종류의 삼각형으로 이어집니다. 만약 어떤 두 변 길이의 합이 다른 한 변의 길이보다 크다면, 그 삼각형은 2차원이고, 넓이를 가지며, non-degerate에 속합니다. 수학에서, dengerate의 경우는 
-A corollary to the triangle inequality theorem is there are two classes of
-triangles--degenerate and non-degenerate. If the sum of the lengths of any two
-sides of a triangle is greater than the length of the third side, that triangle
-is two dimensional, has area, and belongs to the non-degenerate class. In
-mathematics, a degenerate case is a limiting case in which an element of a class
-of objects is qualitatively different from the rest of the class and hence
-belongs to another, usually simpler, class. The degenerate case of the triangle
-inequality theorem is when the sum of the lengths of any two sides of a triangle
-is equal to the length of the third side. A triangle with such qualities is
-qualitatively different from all the triangles in the non-degenerate class since
-it is one dimensional, looks like a straight line, and has no area. Such
-triangles are called degenerate triangles and they belong to the degenerate
-class.
+삼각 부등식 이론의 귀결은, degenerate, non-degenerate 두 종류의 삼각형으로 이어집니다. 만약 어떤 두 변 길이의 합이 다른 한 변의 길이보다 크다면, 그 삼각형은 2차원이고, 넓이를 가지며, non-degerate에 속합니다. 수학에서 degenerate는 제한된 경우입니다. 대상체의 클래스 요소가 질적으로 다른 클래스와 다를 때, 그러므로 더 단순한 클래스일 때의 경우이기 때문입니다. degenerate인 경우의 삼각 부등식 이론은 다른 두 변 길이의 합이 나머지 변의 길이와 같을 때 성립합니다. 이러한 특질의 삼각형은 non-degenerate 클래스의 삼각형과는 질적으로 다릅니다. 일직선으로 보이고 넓이도 없기 때문이죠. 그러한 삼각형들을 degenerate 삼각형이라고 부르고, 이들은 degenerate 클래스에 속하게 됩니다.
 
 ## 깊게 파고들기
 
