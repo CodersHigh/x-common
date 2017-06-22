@@ -42,3 +42,5 @@ struct Garden
         gardenArray = inputstring.components(separatedBy: CharacterSet.newlines)
     }
 }
+
+// array, 문자열 다루기. 정렬하기. array 검색하기.

@@ -50,3 +50,5 @@ class Element<T> {
         self.value = value
     }
 }
+
+// reference call, template 사용하기

@@ -12,3 +12,5 @@ struct Year {
         self.isLeapYear = (divBy4 && !divBy100) || divBy400
     }
 }
+
+// 연산자를 이용한 연산.

@@ -22,3 +22,4 @@ class Luhn{
         return n * 10 + b
     }
 }
+

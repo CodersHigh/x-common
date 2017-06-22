@@ -13,3 +13,5 @@ class ETL {
         return converted
     }
 }
+
+// dictionary, array 이용하기. 문자열 다루기.

@@ -27,3 +27,5 @@ enum GrainsError : Error {
     case inputTooLow(String)
     case inputTooHigh(String)
 }
+
+// 반복문. 연산자를 이용한 연산.
