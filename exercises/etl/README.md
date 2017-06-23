@@ -27,8 +27,22 @@ ETL 은 어떤 데이터 소스로부터 데이터를 추출해 적절한 포멧
 
 이와 같은 방식으로 변환하고자 할 때, 주어진 원래의 알파벳과 점수 데이터 포멧을 새로운 포멧으로 변환하는 클래스를 작성하라.
 
-## Input 
+## Structure
 
-## Output
+ETL 클래스를 작성한다.
+
+다음 함수를 작성한다.
+
+    class func transform(_ source: [Int: [String]]) -> [String: Int] 
+
+앞서 설명한 조건에 따라 주어진 데이터를 새로운 구조로 변환하여 반환한다.
 
 ## Source
+
+    class ETL {
+    
+        class func transform(_ source: [Int: [String]]) -> [String: Int] {
+            /* write your code here */
+        }
+    
+    }
