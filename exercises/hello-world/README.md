@@ -20,7 +20,7 @@ HelloWorld 클래스를 작성한다.
 
 다음 함수들을 구현한다.
 
-    class func hello(_ name: String?) -> String 
+    class func hello(_ name: String) -> String 
 
 name 으로 이름을 전달받으면
 

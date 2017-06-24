@@ -1,4 +1,4 @@
-#RNA Transcription
+# RNA Transcription
 
 DNA와 RNA가닥은 모두 뉴클레오타이드로 구성되어 있다.
 

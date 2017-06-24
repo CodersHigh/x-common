@@ -34,7 +34,7 @@ TwelveDaysSong 클래스를 작성한다.
 
 다음 함수를 작성한다.
 
-class func verse(_ index: Int) -> String
+    class func verse(_ index: Int) -> String
 
 절 번호를 전달받고, 그 절의 가사를 반환한다.
 
