@@ -38,3 +38,5 @@ class Dominoes {
         return true
     }
 }
+
+// dictionary, tuple 이용하기. dictionary 의 탐색.

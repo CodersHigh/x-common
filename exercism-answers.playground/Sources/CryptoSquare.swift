@@ -90,3 +90,5 @@ class Crypto {
         return normalizeCT.trimmingCharacters(in: CharacterSet.whitespaces)
     }
 }
+
+// 문자열 다루기, 문자열 관련 라이브러리 이용. String index 이용.

@@ -17,3 +17,5 @@ func hey(_ input: String) -> String {
     
     return "Whatever."
 }
+
+// 문자열 다루기

@@ -45,3 +45,5 @@ class FoodChain{
         return res
     }
 }
+
+// array, 문자열 다루기

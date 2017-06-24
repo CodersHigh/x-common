@@ -41,3 +41,5 @@ class Clock: CustomStringConvertible, Equatable {
         return Clock(hours: hour, minutes: minute - minutes)
     }
 }
+
+// 연산자를 이용한 연산, 문자열 다루기

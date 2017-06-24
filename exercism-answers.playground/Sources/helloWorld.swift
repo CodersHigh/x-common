@@ -5,3 +5,5 @@ class HelloWorld {
         return "Hello, \(name)!"
     }
 }
+
+// 문자열 다루기

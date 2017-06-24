@@ -9,3 +9,5 @@ extension Array {
         return result
     }
 }
+
+// extension, template, 배열 다루기

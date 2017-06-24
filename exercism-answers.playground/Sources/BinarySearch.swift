@@ -41,3 +41,5 @@ class BinarySearch {
         list = array
     }
 }
+
+// 배열과 반복문

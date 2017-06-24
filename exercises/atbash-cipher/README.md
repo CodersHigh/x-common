@@ -17,11 +17,26 @@ a 는 첫번째 알파벳이므로 마지막 알파벳인 z 로 바꾼다. b 는
 
 암호화된 정보는 해독하기 어렵도록 원래 문장과는 상관없이 5글자씩 묶어 표시한다.
 
-어떤 문자열이 주어졌을 때, Atbash Cipher 기법으로 암호화된 문자열을 반환하는 함수를 작성하라.
+어떤 문자열이 주어졌을 때, Atbash Cipher 기법으로 암호화된 문자열을 반환하는 클래스를 작성하라.
 
-## Input
+## Structure
 
-## Output
+Atbash 클래스를 작성한다.
+
+다음 함수를 작성한다.
+
+    class func encode(_ target: String) -> String
+
+주어진 문자열을 Atbash Cipher 기법으로 변환하여 반환한다.
+
+## Caution
+
+원래의 문자열에 포함된 문장부호와 특수문자는 모두 무시한다.
 
 ## Source
 
+class Atbash {
+    class func encode(_ target: String) -> String {
+        /* write your code here */
+    }
+}

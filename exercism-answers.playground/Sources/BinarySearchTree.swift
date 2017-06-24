@@ -31,3 +31,5 @@ class BinarySearchTree {
         return leftData + [data] + rightData
     }
 }
+
+// reference call 의 개념

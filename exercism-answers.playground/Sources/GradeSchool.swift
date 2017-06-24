@@ -21,3 +21,5 @@ class GradeSchool {
         }
     }
 }
+
+// dictionary 이용하기. sort 하기

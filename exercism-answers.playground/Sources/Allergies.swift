@@ -10,9 +10,9 @@ class Allergies {
     static let pollen = Allergies(64)
     static let cats = Allergies(128)
     
-    let code: UInt
+    let code: Int
     
-    init(_ code: UInt) {
+    init(_ code: Int) {
         self.code = code
     }
     
@@ -20,3 +20,5 @@ class Allergies {
         return (allergy.code & code) > 0
     }
 }
+
+// 연산자를 이용한 연산

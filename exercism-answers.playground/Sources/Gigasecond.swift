@@ -16,3 +16,5 @@ class Gigasecond {
         }
     }
 }
+
+// date, 문자열 다루기

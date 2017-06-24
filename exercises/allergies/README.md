@@ -23,16 +23,84 @@
 어떤 사람의 알레르기 점수를 통해 어떤 아이템에 알레르기가 있는지 알아내고,
 주어진 아이템에 대해 알레르기가 있는지 없는지를 판별하는 함수를 작성하라.
 
-## Setup
+## Structure
 
-Go through the project setup instructions for Xcode using Swift:
+Allergies 클래스를 작성한다. 생성자를 통해 어떤 사람의 알레르기 점수를 정수로 전달받는다.
 
-http://exercism.io/languages/swift
+    init(_ score: Int)
+
+다음 프로퍼티들을 구현한다.
+
+    var eggs: Bool
+    var peanuts: Bool
+    var shellfish: Bool
+    var strawberries: Bool
+    var tomatoes: Bool
+    var chocolate: Bool
+    var pollen: Bool
+    var cats: Bool
+
+각 아이템들에 대해 이 사람이 알레르기를 가졌는지 아닌지를 true 혹은 false 로 반환한다.
+
+## Hint
+
+모든 아이템들의 알레르기 점수가 2의 n 제곱으로 표현될 수 있음에 주목하라.
 
 ## Source
 
-Jumpstart Lab Warm-up [http://jumpstartlab.com](http://jumpstartlab.com)
+    class Allergies {
 
-## Submitting Incomplete Problems
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+        var score: Int
 
+        var eggs: Bool {
+            get {
+                /* write your code here */
+            }
+        }
+
+        var peanuts: Bool {
+            get {
+                /* write your code here */
+            }
+        }
+
+        var shellfish: Bool {
+            get {
+                /* write your code here */
+            }
+        }
+
+        var strawberries: Bool {
+            get {
+                /* write your code here */
+            }
+        }
+
+        var tomatoes: Bool {
+            get {
+                /* write your code here */
+            }
+        }
+
+        var chocolate: Bool {
+            get {
+                /* write your code here */
+            }
+        }
+
+        var pollen: Bool {
+            get {
+                /* write your code here */
+            }
+        }
+
+        var cats: Bool {
+            get {
+                /* write your code here */
+            }
+        }
+
+        init(_ score: Int) {
+            self.score = score
+        }
+    }

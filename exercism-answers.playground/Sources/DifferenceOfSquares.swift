@@ -34,3 +34,5 @@ class Squares {
         self.num = num
     }
 }
+
+// 연산자 이용하여 연산하기

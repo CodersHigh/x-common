@@ -126,3 +126,5 @@ class CustomSet<T>:Equatable where T:Comparable,T:Equatable{
         return true
     }
 }
+
+// 연산자 오버로딩, template 이용하기

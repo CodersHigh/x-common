@@ -3,15 +3,11 @@
 긴 문자열을 그 이니셜만 모아 두문자어로 만들어주는 클래스를 작성하라.
 예를 들어, 
 
-```
-"Portable Network Graphics"
-```
+    "Portable Network Graphics"
 
 는,
 
-```
-"PNG"
-```
+    "PNG"
 
 로 바꾸어 준다.
 
@@ -19,15 +15,11 @@
 
 예를 들어
 
-```
-"Water-to-Market"
-```
+    "Water-to-Market"
 
 은
 
-```
-"WTM"
-```
+    "WTM"
 
 이 된다.
 
@@ -37,18 +29,18 @@ Acronym 클래스를 작성한다.
 
 다음 함수를 구현한다.
 
-```
-class func abbreviate(_ source:String) -> String
-```
+    class func abbreviate(_ source:String) -> String
 
 source 로 원본 문자열을 전달받고, 두문자어로 축약된 문자열을 반환한다.
 
+## Hint
+
+String 클래스의 component(separatedBy:) 함수를 이용해볼 것.
+
 ## Source
 
-```
-class Acronym {
-    class func abbreviate(_ source:String) -> String {
-        /* write your code here */
+    class Acronym {
+        class func abbreviate(_ source:String) -> String {
+            /* write your code here */
+        }
     }
-}
-```
