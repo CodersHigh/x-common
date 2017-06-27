@@ -20,11 +20,31 @@
 
 의 도미노 체인으로 만들면, 가장 앞의 4와 가장 뒤의 3이 일치하지 않으므로, 유효하지 않다.
 
-주어지는 도미노들에 대해, 가능한 모든 도미노 체인을 찾아낼 수 있는 클래스를 작성하라.
+주어지는 도미노들에 대해, 도미노 체인이 가능한지의 여부를 반환할 수 있는 클래스를 작성하라.
 
-##Input
+## Structure
 
-##Output
+Dominoes 클래스를 작성한다. 생성자를 통해 도미노들을 전달받는다. 1과 2가 새겨진 도미노라면 이는 튜플 (1, 2) 로 표현된다.
 
+    init(_ dominoes: [(Int, Int)])
 
-## Source
+다음 프로퍼티를 작성한다.
+
+    var chained: Bool
+
+주어진 도미노들로 도미노 체인을 만드는 것이 가능한지의 여부를 반환한다.
+
+## Source 
+
+    class Dominoes {
+
+        var chainded: Bool {
+            get {
+                /* write your code here */
+            }
+        }
+
+        init(_ dominoes: [(Int, Int)]) {
+            /* write your code here */
+        }
+    }
