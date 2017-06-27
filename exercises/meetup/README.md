@@ -22,7 +22,7 @@ Meetup 클래스를 작성하라. 생성자를 통해 년, 월을 전달받는�
     init(year: Int, month: Int)
 
 다음 함수를 작성한다.
-
+ 
     func day(_ dayOfWeek: Int, which: String) -> String
 
 dayOfWeek 로 요일을 전달받는다. 일요일부터 토요일까지 각각 순서대로 1부터 7에 대응한다. which 로는 몇번째 주인지를 전달받는다. 다음 중 하나이다.

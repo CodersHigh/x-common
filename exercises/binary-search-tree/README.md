@@ -43,10 +43,45 @@ Binary search tree 는 node 들의 연결로 구성되어 있다. Node 란 하�
 
 Binary search tree 구조에 따라 데이터를 삽입하고 데이터를 찾을 수 있는 클래스를 작성하라.
 
-## Input
+## Structure
 
-## Output
+BinarySearchTree 클래스를 작성한다. 생성자를 통해 첫번째 데이터, 즉 head node 의 데이터를 전달받는다.
 
-## Source
+    init(_ data: Int)
 
+다음 프로퍼티들을 작성한다.
 
+    var data: Int
+
+node 의 데이터를 저장한다.
+
+    var left: BinarySearchTree?
+
+왼쪽 가지로 연결되는 다음 node 를 저장한다.
+
+    var right: BinarySearchTree?
+
+오른쪽 가지로 연결되는 다음 node 를 저장한다.
+
+다음 함수를 구현한다.
+
+    func insert(_ data: Int) 
+
+전달받은 데이터로 새로운 node 를 생성하여 왼쪽 혹은 오른쪽 가지에 연결한다.
+
+## Source 
+
+    class BinarySearchTree {
+
+        var data: Int
+        var left: BinarySearchTree?
+        var right: BinarySearchTree?
+
+        init(_ data: Int) {
+            self.data = data
+        }
+
+        func insert(_ data: Int) {
+            /* write your code here */
+        }
+    }
